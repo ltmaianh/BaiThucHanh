@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoMVC.Controllers{
- public class Employee:Controller{
+ public class EmployeeController:Controller{
       public IActionResult Index(){
          return View();
         }
