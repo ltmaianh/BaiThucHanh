@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace DemoMVC.Controllers
 {
@@ -20,10 +21,19 @@ namespace DemoMVC.Controllers
         }
 
         // GET: Preson
-        public async Task<IActionResult> Index()
+    
+       public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.Preson.ToListAsync());
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> Index(string tuKhoa)
+        {
+            return View(await _context.Preson.Where(s => s.FullName.Contains(tuKhoa)).ToListAsync());
+        }
+
+
 
         // GET: Preson/Details/5
         public async Task<IActionResult> Details(string id)
@@ -33,7 +43,7 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Person
+            var preson = await _context.Preson
                 .FirstOrDefaultAsync(m => m.PresonId == id);
             if (preson == null)
             {
@@ -73,7 +83,7 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Person.FindAsync(id);
+            var preson = await _context.Preson.FindAsync(id);
             if (preson == null)
             {
                 return NotFound();
@@ -124,7 +134,7 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Person
+            var preson = await _context.Preson
                 .FirstOrDefaultAsync(m => m.PresonId == id);
             if (preson == null)
             {
@@ -139,10 +149,10 @@ namespace DemoMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var preson = await _context.Person.FindAsync(id);
+            var preson = await _context.Preson.FindAsync(id);
             if (preson != null)
             {
-                _context.Person.Remove(preson);
+                _context.Preson.Remove(preson);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +161,7 @@ namespace DemoMVC.Controllers
 
         private bool PresonExists(string id)
         {
-            return _context.Person.Any(e => e.PresonId == id);
+            return _context.Preson.Any(e => e.PresonId == id);
         }
     }
 }
