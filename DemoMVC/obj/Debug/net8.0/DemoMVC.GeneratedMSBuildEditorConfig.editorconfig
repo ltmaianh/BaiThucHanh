@@ -54,24 +54,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL01/DemoMVC/Views/Preson/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc29uXENyZWF0ZS5jc2h0bWw=
+[D:/PTPMQL01/DemoMVC/Views/Person/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL01/DemoMVC/Views/Preson/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc29uXERlbGV0ZS5jc2h0bWw=
+[D:/PTPMQL01/DemoMVC/Views/Person/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL01/DemoMVC/Views/Preson/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc29uXERldGFpbHMuY3NodG1s
+[D:/PTPMQL01/DemoMVC/Views/Person/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL01/DemoMVC/Views/Preson/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc29uXEVkaXQuY3NodG1s
+[D:/PTPMQL01/DemoMVC/Views/Person/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL01/DemoMVC/Views/Preson/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc29uXEluZGV4LmNzaHRtbA==
+[D:/PTPMQL01/DemoMVC/Views/Person/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/PTPMQL01/DemoMVC/Views/Shared/Error.cshtml]

@@ -1,4 +1,4 @@
-@model IEnumerable<DemoMVC.Models.Preson>
+@model IEnumerable<DemoMVC.Models.Person>
 
 @{
     ViewData["Title"] = "Index";
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PresonId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PresonId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PresonId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
             </td>
         </tr>
 }

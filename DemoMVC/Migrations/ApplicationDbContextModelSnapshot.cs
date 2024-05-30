@@ -29,9 +29,9 @@ namespace DemoMVC.Migrations
                     b.ToTable("Employee");
                 });
 
-            modelBuilder.Entity("DemoMVC.Models.Preson", b =>
+            modelBuilder.Entity("DemoMVC.Models.Person", b =>
                 {
-                    b.Property<string>("PresonId")
+                    b.Property<string>("PersonId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
@@ -42,9 +42,9 @@ namespace DemoMVC.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PresonId");
+                    b.HasKey("PersonId");
 
-                    b.ToTable("Preson");
+                    b.ToTable("Person");
                 });
 #pragma warning restore 612, 618
         }

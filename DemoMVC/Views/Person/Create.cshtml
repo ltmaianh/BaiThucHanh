@@ -1,4 +1,4 @@
-@model DemoMVC.Models.Preson
+@model DemoMVC.Models.Person
 
 @{
     ViewData["Title"] = "Create";
@@ -6,16 +6,16 @@
 
 <h1>Create</h1>
 
-<h4>Preson</h4>
+<h4>Person</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="PresonId" class="control-label"></label>
-                <input asp-for="PresonId" class="form-control" />
-                <span asp-validation-for="PresonId" class="text-danger"></span>
+                <label asp-for="PersonId" class="control-label"></label>
+                <input asp-for="PersonId" class="form-control" />
+                <span asp-validation-for="PersonId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>

@@ -7,35 +7,31 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace DemoMVC.Controllers
 {
-    public class PresonController : Controller
+    public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PresonController(ApplicationDbContext context)
+        public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Preson
-    
-       public async Task<IActionResult> Index()
+        // GET: Person
+        public async Task<IActionResult> Index()
         {
-            return View(await _context.Preson.ToListAsync());
+            return View(await _context.Person.ToListAsync());
         }
-        
-        [HttpPost]
+         [HttpPost]
         public async Task<IActionResult> Index(string tuKhoa)
         {
-            return View(await _context.Preson.Where(s => s.FullName.Contains(tuKhoa)).ToListAsync());
+            return View(await _context.Person.Where(s => s.FullName.Contains(tuKhoa)).ToListAsync());
         }
 
 
-
-        // GET: Preson/Details/5
+        // GET: Person/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -43,39 +39,39 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Preson
-                .FirstOrDefaultAsync(m => m.PresonId == id);
-            if (preson == null)
+            var person = await _context.Person
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(preson);
+            return View(person);
         }
 
-        // GET: Preson/Create
+        // GET: Person/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Preson/Create
+        // POST: Person/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PresonId,FullName,Address")] Preson preson)
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(preson);
+                _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(preson);
+            return View(person);
         }
 
-        // GET: Preson/Edit/5
+        // GET: Person/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -83,22 +79,22 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Preson.FindAsync(id);
-            if (preson == null)
+            var person = await _context.Person.FindAsync(id);
+            if (person == null)
             {
                 return NotFound();
             }
-            return View(preson);
+            return View(person);
         }
 
-        // POST: Preson/Edit/5
+        // POST: Person/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PresonId,FullName,Address")] Preson preson)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
         {
-            if (id != preson.PresonId)
+            if (id != person.PersonId)
             {
                 return NotFound();
             }
@@ -107,12 +103,12 @@ namespace DemoMVC.Controllers
             {
                 try
                 {
-                    _context.Update(preson);
+                    _context.Update(person);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PresonExists(preson.PresonId))
+                    if (!PersonExists(person.PersonId))
                     {
                         return NotFound();
                     }
@@ -123,10 +119,10 @@ namespace DemoMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(preson);
+            return View(person);
         }
 
-        // GET: Preson/Delete/5
+        // GET: Person/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -134,34 +130,34 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var preson = await _context.Preson
-                .FirstOrDefaultAsync(m => m.PresonId == id);
-            if (preson == null)
+            var person = await _context.Person
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(preson);
+            return View(person);
         }
 
-        // POST: Preson/Delete/5
+        // POST: Person/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var preson = await _context.Preson.FindAsync(id);
-            if (preson != null)
+            var person = await _context.Person.FindAsync(id);
+            if (person != null)
             {
-                _context.Preson.Remove(preson);
+                _context.Person.Remove(person);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PresonExists(string id)
+        private bool PersonExists(string id)
         {
-            return _context.Preson.Any(e => e.PresonId == id);
+            return _context.Person.Any(e => e.PersonId == id);
         }
     }
 }

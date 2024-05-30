@@ -276,3 +276,7 @@ D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cry
 D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\PTPMQL01\DemoMVC\obj\Debug\net8.0\DemoMVC.csproj.AssemblyReference.cache
 D:\PTPMQL01\DemoMVC\obj\Debug\net8.0\DemoMVC.csproj.CopyComplete
+D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\EPPlus.dll
+D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+D:\PTPMQL01\DemoMVC\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
