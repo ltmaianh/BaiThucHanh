@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
 using DemoMVC.Models.Process;
+using OfficeOpenXml;
 
 namespace DemoMVC.Controllers
 {
@@ -205,6 +206,22 @@ namespace DemoMVC.Controllers
                 }
 
             return View();
+        }
+        // download
+        public IActionResult Download()
+        {
+            var fileName = "PersonList.xlsx";
+            using(ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                excelWorksheet.Cells["A1"].Value = "PersonId";
+                excelWorksheet.Cells["B1"].Value = "FullName";
+                excelWorksheet.Cells["C1"].Value = "Adress";
+                var PersonList = _context.Person.ToList();
+                excelWorksheet.Cells["A2"].LoadFromCollection(PersonList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",fileName);
+            }
         }
 
     }
