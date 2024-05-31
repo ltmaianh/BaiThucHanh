@@ -9,6 +9,7 @@ using DemoMVC.Data;
 using DemoMVC.Models;
 using DemoMVC.Models.Process;
 using OfficeOpenXml;
+using X.PagedList;
 
 namespace DemoMVC.Controllers
 {
@@ -21,12 +22,13 @@ namespace DemoMVC.Controllers
             _context = context;
         }
       private ExcelProcess _excelPro = new ExcelProcess();
+        public async Task<IActionResult> Index(int? page){
+            var model = _context.Person.ToList().ToPagedList(page ?? 1,5);
+            return View(model);
+        }
 
         // GET: Person
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Person.ToListAsync());
-        }
+       
          [HttpPost]
         public async Task<IActionResult> Index(string tuKhoa)
         {
